@@ -16,9 +16,12 @@ class UserModuleApplicationTests {
 	public void contextLoads() {
 
 		LOGGER.debug("Testing contextLoads() method");
+		
 		int fno = 10;
 		int sno = 10;
+		
 		LOGGER.debug("Is fno[{}] == sno[{}].", fno, sno);
+		
 		assertEquals(fno, sno);
 	}
 
