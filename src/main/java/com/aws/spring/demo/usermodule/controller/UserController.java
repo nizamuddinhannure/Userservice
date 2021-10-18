@@ -31,6 +31,13 @@ public class UserController {
 		return health;
 	}
 
+	@RequestMapping(value = "/{name}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public String userName(final @PathVariable String name) {
+		LOGGER.debug("Request for name[{}]", name);
+		String message = "Hi " + name + ", Welcome to my application.";
+		return message;
+	}
+
 	@RequestMapping(value = "/user/{userId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<User> getUser(final @PathVariable Integer userId) {
 		LOGGER.debug("Request to get user by userId [{}]", userId);
